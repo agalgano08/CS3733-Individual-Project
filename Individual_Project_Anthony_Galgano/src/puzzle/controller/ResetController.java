@@ -15,10 +15,12 @@ public class ResetController {
 		this.app = app;
 	}
 
-
+	/**
+	 * Resets the puzzle.
+	 */
 	public void reset() {
 		model.resetPuzzle();
-		UpdateButtons.enableButtons(app, model.avaliableMoves());
+		UpdateButtons.enableButtons(app, model.availableMoves());
 		app.getWinLoseLabel().setText("");
 		app.repaint();
 	}

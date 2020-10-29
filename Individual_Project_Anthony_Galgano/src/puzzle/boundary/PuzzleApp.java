@@ -78,7 +78,7 @@ public class PuzzleApp extends JFrame {
 			}
 		});
 
-
+		
 		btnLeft = new JButton("<");
 		btnLeft.setFont(new Font("Tahoma", Font.BOLD, 38));
 		btnLeft.addActionListener(new ActionListener() {

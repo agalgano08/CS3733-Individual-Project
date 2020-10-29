@@ -24,6 +24,14 @@ public class SelectTileController {
 	}
 
 
+	/**
+	 * Used to select a tile.
+	 * If the tile contains the point, the buttons will be updated 
+	 * with the corresponding available moves and the application refreshed. 
+	 * 
+	 * Takes in a point.
+	 * @param point
+	 */
 	public void process(Point point) {
 		Coordinate c = app.getPuzzlePanel().pointsToCoordinate(point);
 		Puzzle puzzle = model.getPuzzle();
@@ -32,7 +40,7 @@ public class SelectTileController {
 			if(t.contains(c)) {
 				model.clearSelectedTile();
 				model.setSelectedTile(t);
-				List<MoveType> moves = model.avaliableMoves(t);
+				List<MoveType> moves = model.availableMoves(t);
 				UpdateButtons.enableButtons(app, moves);
 				app.repaint();
 			}

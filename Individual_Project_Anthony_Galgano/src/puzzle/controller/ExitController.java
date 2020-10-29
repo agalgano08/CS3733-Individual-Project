@@ -13,7 +13,9 @@ public class ExitController {
 		this.app = app;
 	}
 
-
+	/**
+	 * Used to exit the application with a pop-up. 
+	 */
 	public void exit() {
 		int c = JOptionPane.showConfirmDialog(app, "Do you want to exit application?");
 		if (c== JOptionPane.OK_OPTION) {

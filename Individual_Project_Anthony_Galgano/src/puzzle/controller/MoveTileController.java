@@ -21,6 +21,12 @@ public class MoveTileController {
 	}
 
 
+	/**
+	 * Merges two tiles based on the input direction.
+	 * Checks if game is over or if puzzle is in win condition or lose condition.
+	 * @param dir Direction of merge.
+	 * @return Returns true if the game is not over and the move is possible. 
+	 */
 	public boolean merge(MoveType dir) {
 		if(model.getSelectedTile() == null) {return false;}
 		
@@ -28,7 +34,7 @@ public class MoveTileController {
 		if(model.isGameOver()) {return false;}
 		
 		if(model.tryMove(dir)) {
-			UpdateButtons.enableButtons(app,model.avaliableMoves());
+			UpdateButtons.enableButtons(app,model.availableMoves());
 			app.repaint();
 		}
 		

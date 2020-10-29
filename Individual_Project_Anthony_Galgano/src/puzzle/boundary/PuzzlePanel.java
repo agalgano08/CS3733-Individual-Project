@@ -25,6 +25,11 @@ public class PuzzlePanel extends JPanel {
 		this.model = m;
 	}
 
+	/**
+	 * Computes a rectangle for the tiles. 
+	 * @param t
+	 * @return
+	 */
 	public Rectangle computeRectangle(Tile t) {
 		int col = t.getColumn();
 		int row = t.getRow();
@@ -32,6 +37,9 @@ public class PuzzlePanel extends JPanel {
 		return rect;
 	}
 
+	/**
+	 * Paints the puzzle piece colors and puts values in the middle of squares. 
+	 */
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);

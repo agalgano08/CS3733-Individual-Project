@@ -49,18 +49,27 @@ public class Model {
 		possibleRemainingMoves = m;
 	}
 
+	/**
+	 * Creates a puzzle.
+	 * @param p
+	 */
 	public void setPuzzle(Puzzle p) {
 		puzzle = p;
 		gameOver = false;
 		selectedTile = null;
 	}
 
+	/**
+	 * Determines whether the move direction is valid or not.
+	 * @param dir
+	 * @return Returns true if the move is possible, false otherwise.
+	 */
 	public boolean tryMove(MoveType dir) {
 		if (selectedTile == null) {
 			return false;
 		}
 		Tile newTile;
-		for (MoveType move : avaliableMoves()) {
+		for (MoveType move : availableMoves()) {
 			if (dir == move) {
 				if (dir == MoveType.Up) {
 					newTile = new Tile(1, 1, puzzle.multiplyTileValues(upTile, selectedTile), true);
@@ -88,22 +97,36 @@ public class Model {
 		return true;
 	}
 
-	private void operateTile(Tile newTile, Tile moveTile) {
-		puzzle.remove(moveTile);
-		puzzle.replace(newTile, moveTile.col, moveTile.row);
+	/**
+	 * Replaces an old tile with a new tile, and sets old tile to false. 
+	 * @param newTile
+	 * @param oldTile
+	 */
+	private void operateTile(Tile newTile, Tile oldTile) {
+		puzzle.remove(oldTile);
+		puzzle.replace(newTile, oldTile.col, oldTile.row);
 		selectedTile.setInPlay(false);
 	}
 
-	public List<MoveType> avaliableMoves() {
+	/**
+	 * Determines the available moves for the selectedTile. 
+	 * @return Returns a list of the available move directions. 
+	 */
+	public List<MoveType> availableMoves() {
 		ArrayList<MoveType> moves = new ArrayList<>();
 		if (selectedTile == null) {
 			return moves;
 		}
 
-		return avaliableMoves(selectedTile);
+		return availableMoves(selectedTile);
 	}
 
-	public List<MoveType> avaliableMoves(Tile t) {
+	/**
+	 * Determines the available moves for a Tile.
+	 * @param t
+	 * @return Returns a list of the available move directions.
+	 */
+	public List<MoveType> availableMoves(Tile t) {
 		ArrayList<MoveType> moves = new ArrayList<>();
 		if (selectedTile == null) {
 			return moves;
@@ -161,6 +184,11 @@ public class Model {
 		return moves;
 	}
 
+	/**
+	 * Finds the surrounding Tiles, (Up, Down, Left Right) Tiles 
+	 * for a Tile.
+	 * @param t
+	 */
 	public void findSurroundTiles(Tile t) {
 		upTile = null;
 		downTile = null;
@@ -200,6 +228,9 @@ public class Model {
 
 	}
 
+	/**
+	 * Resets the puzzle to the original state.
+	 */
 	public void resetPuzzle() {
 		puzzle.reset();
 		selectedTile = null;
@@ -208,6 +239,10 @@ public class Model {
 
 	}
 
+	/**
+	 * Determines if the model is in a winning condition.
+	 * @return Returns true if the model is in a winning condition, false otherwise.
+	 */
 	public boolean isWinCondition() {
 		if (selectedTile == null) {
 			return false;
@@ -215,23 +250,31 @@ public class Model {
 		return puzzle.isWinner();
 	}
 
+	/**
+	 * Determines if the model is in a losing condition.
+	 * @return Returns true if the model is in a losing condition, false otherwise.
+	 */
 	public boolean isLoseCondition() {
 		if (selectedTile == null) {
 			return false;
 		}
 
-		if (calculateMovesAvaliable() == 0) {
+		if (calculateMovesAvailable() == 0) {
 			return true;
 		}
 
 		return false;
 	}
 
-	private int calculateMovesAvaliable() {
+	/**
+	 * Calculates the total moves available for all the pieces.
+	 * @return Returns an integer of available moves.
+	 */
+	private int calculateMovesAvailable() {
 		possibleRemainingMoves = 0;
 		for (Tile t : puzzle) {
 			if (t.getInPlay()) {
-				possibleRemainingMoves = possibleRemainingMoves + avaliableMoves(t).size();
+				possibleRemainingMoves = possibleRemainingMoves + availableMoves(t).size();
 			}
 
 		}
