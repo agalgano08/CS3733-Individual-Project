@@ -2,16 +2,26 @@ package model;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class TestModel {
+import puzzle.model.Model;
+import puzzle.model.Puzzle;
+import puzzle.model.Tile;
 
-	@Test
-	public void testInitialState( ) {
-		
-	}
+
+class TestModel extends ModelTestCase {
+	
 
 	
+	@Test
+	public void testInitialState( ) {
+		assertTrue(model.getPossibleRemainingMoves() == 0);
+		
+		assertTrue (model.getSelectedTile() == null);
+	}
+
+	/*
 	@Test
 	public void testPossibleMove() {
 		
@@ -28,13 +38,16 @@ class TestModel {
 		
 	}
 	
+	
 	@Test
 	public void testReset() {
 		
 	}
 	
+	
 	@Test
 	public void testWin() {
 		
 	}
+	*/
 }

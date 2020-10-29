@@ -15,7 +15,6 @@ public class Main {
 		Model m = new Model();
 		
 		Puzzle puzzle = new Puzzle(4,3,1,1);
-		Tile t = new Tile(1,1,5,true);
 		m.setPuzzle(puzzle);
 		puzzle.add(new Tile(1,1,3,true), 0,0);
 		puzzle.add(new Tile(1,1,9,true), 0,1);

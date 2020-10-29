@@ -10,6 +10,12 @@ import puzzle.model.Coordinate;
 
 class TestCoordinate {
 
+	/**
+	 * @author Professor George Heineman 
+	 * Class used from the SlidingPuzzleApplication example.
+	 * These test cases were used to validate the class coordiantes. 
+	 */
+	
 	@Test
 	public void testEquals() {
 		Coordinate c1 = new Coordinate(1, 2);

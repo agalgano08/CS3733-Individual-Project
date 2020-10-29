@@ -269,7 +269,7 @@ public class Model {
 	 * Calculates the total moves available for all the pieces.
 	 * @return Returns an integer of available moves.
 	 */
-	private int calculateMovesAvailable() {
+	public int calculateMovesAvailable() {
 		possibleRemainingMoves = 0;
 		for (Tile t : puzzle) {
 			if (t.getInPlay()) {
