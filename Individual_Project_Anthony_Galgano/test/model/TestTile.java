@@ -21,18 +21,15 @@ class TestTile {
 	
 	@Test
 	void testContains() {
-		Tile t = new Tile (1,2,5,true);
-		t.setRow(0);
-		t.setColumn(0);
+		Tile t = new Tile (1,1,5,true);
+		t.setRow(2);
+		t.setColumn(2);
 		
-		/**
-		 * (0,0)
-		 * (0,1)
-		 */
-		assertTrue(t.contains(new Coordinate(0,0)));
-		assertTrue(t.contains(new Coordinate(0,1)));
+		assertTrue(t.contains(new Coordinate(2,2)));
 		
-		assertFalse(t.contains(new Coordinate(1,1)));
+		assertFalse(t.contains(new Coordinate(3,3)));
+		
+
 	}
 
 }
