@@ -7,24 +7,24 @@ public class Tile {
 	private int value;
 	int row;
 	int col;
-	private boolean getInPlay;
+	private boolean inPlay;
 	
 	public Tile(int width, int height, int value, boolean inPlay) {
 		this.width = width;
 		this.height = height;
 		this.value = value;
-		this.getInPlay = inPlay;
+		this.inPlay = inPlay;
 	}
 	
 	public void setRow(int r) {this.row = r;}
 	public void setColumn(int c) {this.col = c;}
 	public void setValue(int value ){this.value = value;}
-	public void setInPlay(boolean flag ){this.getInPlay = flag;}
+	public void setInPlay(boolean flag ){this.inPlay = flag;}
 	
 	public int getColumn() { return col; }
 	public int getRow() { return row; }
 	public int getValue() { return value; }
-	public boolean getInPlay(){return getInPlay;}
+	public boolean getInPlay(){return inPlay;}
 	public Coordinate getLocation() {return new Coordinate(col,row);}
 	
 	
@@ -48,7 +48,8 @@ public class Tile {
 		if( o == null) {return false; }
 		if (o instanceof Tile) {
 			Tile other = (Tile) o;
-			return col == other.col && row == other.row && value == other.value && height == other.height && width == other.width;
+			return col == other.col && row == other.row && value == other.value 
+					&& height == other.height && width == other.width && inPlay == other.inPlay;
 		}
 		return false;
 	}
@@ -58,7 +59,7 @@ public class Tile {
 	 * @return A copy of the tile.
 	 */
 	public Tile copy() {
-		Tile t = new Tile(width, height, value, getInPlay);
+		Tile t = new Tile(width, height, value, inPlay);
 		t.setRow(row);
 		t.setColumn(col);
 		return t;
