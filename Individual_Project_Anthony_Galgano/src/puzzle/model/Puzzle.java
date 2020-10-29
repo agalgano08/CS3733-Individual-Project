@@ -54,23 +54,29 @@ public class Puzzle implements Iterable<Tile> {
 	}
 
 	/**
-	 * Adds a tile to the puzzle, but not to the original tile list.
-	 * Takes in a tile, , column and row for the tile to be placed.
-	 * @param t
-	 * @param col
-	 * @param row
+	 * Takes in a new tile and an old tile and replaces the old tile position with the new one. 
+	 * @param newTile
+	 * @param oldTile
 	 */
-	public void replace(Tile t, int col, int row) {
-		t.setColumn(col);
-		t.setRow(row);
-
-		tiles.add(t);
+	public void replace(Tile newTile, Tile oldTile) {
+		tiles.remove(oldTile);
+		
+		newTile.setColumn(oldTile.getColumn());
+		newTile.setRow(oldTile.getRow());
+		tiles.add(newTile);
 	}
 
 	/**
 	 * @return Returns the list of tiles in the puzzle.
 	 */
 	public ArrayList<Tile> getTiles() {
+		return tiles;
+	}
+	
+	/**
+	 * @return Returns the original list of tiles in the puzzle.
+	 */
+	public ArrayList<Tile> getOriginalTiles() {
 		return tiles;
 	}
 

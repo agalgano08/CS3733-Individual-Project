@@ -103,8 +103,7 @@ public class Model {
 	 * @param oldTile
 	 */
 	private void operateTile(Tile newTile, Tile oldTile) {
-		puzzle.remove(oldTile);
-		puzzle.replace(newTile, oldTile.col, oldTile.row);
+		puzzle.replace(newTile,oldTile);
 		selectedTile.setInPlay(false);
 	}
 
