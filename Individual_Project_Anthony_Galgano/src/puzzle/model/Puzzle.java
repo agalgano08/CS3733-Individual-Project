@@ -147,7 +147,7 @@ public class Puzzle implements Iterable<Tile> {
 	 */
 	public boolean isWinner() {
 		Coordinate winningCoordinate = new Coordinate(winningColumn, winningRow);
-		if (tilesInPlay == 1 && findATilesInPlay().getLocation().equals(winningCoordinate)) {
+		if (tilesInPlay == 1 && findFirstTileInPlay().getLocation().equals(winningCoordinate)) {
 			return true;
 		}
 		return false;
@@ -156,7 +156,7 @@ public class Puzzle implements Iterable<Tile> {
 	/**
 	 * Returns the first tile found in play. 
 	 */
-	public Tile findATilesInPlay() {
+	public Tile findFirstTileInPlay() {
 		for (Tile t : this) {
 			if (t.getInPlay()) {
 				return t;

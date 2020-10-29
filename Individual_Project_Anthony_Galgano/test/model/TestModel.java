@@ -7,8 +7,34 @@ import org.junit.jupiter.api.Test;
 class TestModel {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	public void testInitialState( ) {
+		
 	}
 
+	
+	@Test
+	public void testPossibleMove() {
+		
+	}
+	
+	
+	@Test
+	public void testMove() {
+		
+	}
+	
+	@Test
+	public void testBadMoves() {
+		
+	}
+	
+	@Test
+	public void testReset() {
+		
+	}
+	
+	@Test
+	public void testWin() {
+		
+	}
 }
