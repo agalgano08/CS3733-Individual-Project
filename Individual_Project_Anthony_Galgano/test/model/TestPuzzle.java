@@ -25,10 +25,8 @@ class TestPuzzle {
 		Tile t = new Tile(1,1,5,true);
 		Tile t2 = new Tile(1,1,5,true);
 		p.add(t, 1, 1);
-		assertEquals(p.getTilesInPlay(), 1);
-		p.remove(t);
-		assertEquals(p.getTilesInPlay(), 0);
-		p.add(t, 1, 1);
+		p.add(t2, 2,1);
+		assertEquals(p.getTilesInPlay(), 2);
 		p.replace(t,t2);
 		assertEquals(p.getTilesInPlay(), 1);
 		
