@@ -59,7 +59,7 @@ public class Puzzle implements Iterable<Tile> {
 	 * @param oldTile
 	 */
 	public void replace(Tile newTile, Tile oldTile) {
-		tiles.remove(oldTile);
+		remove(oldTile);
 		
 		newTile.setColumn(oldTile.getColumn());
 		newTile.setRow(oldTile.getRow());

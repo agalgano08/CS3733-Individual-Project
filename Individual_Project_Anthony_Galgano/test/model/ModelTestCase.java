@@ -18,7 +18,7 @@ public abstract class ModelTestCase {
 	 * Helper test method for location a piece by a coordinate.
 	 *  
 	 */
-	protected Optional<Tile> getPiece(Coordinate c) {
+	protected Optional<Tile> getTile(Coordinate c) {
 		for (Tile t : model.getPuzzle()) {
 			if (t.contains(c)) {
 				return Optional.of(t);
@@ -34,7 +34,6 @@ public abstract class ModelTestCase {
 		model  = new Model();
 		
 		Puzzle puzzle = new Puzzle(4,3,1,1);
-		puzzle.setTilesInPlay(9);
 		puzzle.add(new Tile(1,1,3,true), 0,0);
 		puzzle.add(new Tile(1,1,9,true), 0,1);
 		puzzle.add(new Tile(1,1,4,true), 0,2);
