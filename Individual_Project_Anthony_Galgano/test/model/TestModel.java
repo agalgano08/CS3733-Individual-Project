@@ -17,8 +17,8 @@ class TestModel extends ModelTestCase {
 	@Test
 	public void testInitialState( ) {
 		assertTrue(model.getPossibleRemainingMoves() == 0);
-		
-		assertTrue (model.getSelectedTile() == null);
+		assertFalse(model.isGameOver());
+		assertTrue (model.getSelectedTile() == null); 
 	}
 
 	/*
