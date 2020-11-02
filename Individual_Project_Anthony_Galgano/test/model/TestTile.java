@@ -12,9 +12,9 @@ class TestTile {
 	
 	@Test
 	void testConstruction() {
-		Tile tile = new Tile(1, 2, 10, true);
+		Tile tile = new Tile(1,1,10, true);
 		assertEquals (1, tile.width);
-		assertEquals (2, tile.height);
+		assertEquals (1, tile.height);
 		assertEquals (10, tile.getValue());
 		assertTrue(tile.getInPlay());
 	}
