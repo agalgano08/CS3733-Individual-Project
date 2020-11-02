@@ -73,8 +73,8 @@ public class PuzzlePanel extends JPanel {
 			g.fillRect(r.x, r.y, r.width, r.height);
 			if (t.getInPlay()) {
 				g.setColor(Color.black);
-				g.setFont(new Font("", 0, 50));
-				g.drawString(Integer.toString(t.getValue()), (r.x + 20), (r.y + 60));
+				g.setFont(new Font("", 0, 40));
+				g.drawString(Integer.toString(t.getValue()), (r.x + 25), (r.y + 60));
 			}
 			
 		}
