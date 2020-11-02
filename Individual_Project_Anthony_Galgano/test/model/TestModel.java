@@ -88,6 +88,42 @@ class TestModel extends ModelTestCase {
 	}
 	
 	@Test
+	public void testTileUp() {
+		Tile t = this.getTile(new Coordinate(1, 1)).get(); 
+		Tile u = this.getTile(new Coordinate(1, 0)).get(); 
+		model.setSelectedTile(t);
+		model.findSurroundTiles(t);
+		assertEquals(model.getUpTile().getValue(), u.getValue());
+	}
+	
+	@Test
+	public void testTileLeft() {
+		Tile t = this.getTile(new Coordinate(1, 1)).get(); 
+		Tile l = this.getTile(new Coordinate(0, 1)).get(); 
+		model.setSelectedTile(t);
+		model.findSurroundTiles(t);
+		assertEquals(model.getLeftTile().getValue(), l.getValue());
+	}
+	
+	@Test
+	public void testTileDown() {
+		Tile t = this.getTile(new Coordinate(1, 1)).get(); 
+		Tile d = this.getTile(new Coordinate(1, 2)).get(); 
+		model.setSelectedTile(t);
+		model.findSurroundTiles(t);
+		assertEquals(model.getDownTile().getValue(), d.getValue());
+	}
+	
+	@Test
+	public void testTileRight() {
+		Tile t = this.getTile(new Coordinate(1, 1)).get(); 
+		Tile r = this.getTile(new Coordinate(2, 1)).get(); 
+		model.setSelectedTile(t);
+		model.findSurroundTiles(t);
+		assertEquals(model.getRightTile().getValue(), r.getValue());
+	}
+	
+	@Test
 	public void testBadMoves() {
 		
 		Tile t = this.getTile(new Coordinate(2,0)).get(); 

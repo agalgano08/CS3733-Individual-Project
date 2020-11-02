@@ -24,6 +24,19 @@ public class Model {
 	public void setSelectedTile(Tile t) {
 		selectedTile = t;
 	}
+	
+	public void setUpTile(Tile t) {
+		upTile = t;
+	}
+	public void setRightTile(Tile t) {
+		rightTile = t;
+	}
+	public void setLeftTile(Tile t) {
+		leftTile = t;
+	}
+	public void setDownTile(Tile t) {
+		downTile = t;
+	}
 
 	public void clearSelectedTile() {
 		selectedTile = null;
@@ -31,6 +44,18 @@ public class Model {
 
 	public Tile getSelectedTile() {
 		return selectedTile;
+	}
+	public Tile getUpTile() {
+		return upTile;
+	}
+	public Tile getDownTile() {
+		return downTile;
+	}
+	public Tile getRightTile() {
+		return rightTile;
+	}
+	public Tile getLeftTile() {
+		return leftTile;
 	}
 
 	public boolean isGameOver() {
